@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register - I4C 2025</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Additional form-specific styles */
+    .registration-form {
+      max-width: 700px;
+      margin: 40px auto 80px;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      color: #222;
+    }
+    .registration-form label {
+      display: block;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 6px;
+      color: #004080;
+    }
+    .registration-form label span {
+      color: #d9534f; /* red for required fields */
+      margin-left: 3px;
+    }
+    .registration-form input[type="text"],
+    .registration-form input[type="email"],
+    .registration-form input[type="tel"],
+    .registration-form select,
+    .registration-form textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.3s;
+      resize: vertical;
+    }
+    .registration-form input[type="text"]:focus,
+    .registration-form input[type="email"]:focus,
+    .registration-form input[type="tel"]:focus,
+    .registration-form select:focus,
+    .registration-form textarea:focus {
+      border-color: #00427E;
+      outline: none;
+    }
+    .registration-form textarea {
+      min-height: 80px;
+    }
+    .consent-checkbox {
+      margin-top: 20px;
+      font-weight: normal;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+    }
+    .consent-checkbox input[type="checkbox"] {
+      margin-right: 10px;
+      width: 18px;
+      height: 18px;
+    }
+    .register-btn {
+      display: block;
+      width: 100%;
+      margin-top: 32px;
+      padding: 16px 0;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(90deg, #00427E, #0073e6);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    .register-btn:hover,
+    .register-btn:focus {
+      background: linear-gradient(90deg, #0073e6, #00427E);
+      transform: translateY(-2px) scale(1.03);
+      outline: none;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .registration-form {
+        margin: 20px 15px 60px;
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">I4C 2025</div>
+    <ul class="nav-links">
+      <li><a href="home.html#home">Home</a></li>
+      <li><a href="home.html#about">About</a></li>
+      <li><a href="home.html#speakers">Speakers</a></li>
+      <li><a href="home.html#schedule">Schedule</a></li>
+      <li><a href="home.html#register" class="active">Register</a></li>
+      <li><a href="http://localhost:80/php/i4c/admin.php">Admin Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Registration Form Section -->
+  <section class="register-section">
+    <div class="container">
+      <h2 class="section-title">Event Registration</h2>
+      <form method="POST" action="http://localhost:80/php/i4c/startpayment.php" class="registration-form" id="registrationForm" novalidate>
+  <label for="fullName">Full Name<span>*</span></label>
+  <input type="text" id="fullName" name="fullName" required />
+
+  <label for="email">Email Address<span>*</span></label>
+  <input type="email" id="email" name="email" required />
+
+  <label for="phone">Phone Number</label>
+  <input type="tel" id="phone" name="phone" />
+
+  <div class="consent-checkbox">
+    <input type="checkbox" id="consent" name="consent" required />
+    <label for="consent">I agree to the event <a href="#" target="_blank" rel="noopener noreferrer">terms and privacy policy</a>.<span>*</span></label>
+  </div>
+
+  <button type="submit" class="register-btn">Proceed to Payment</button>
+</form>
+
+    </div>
+  </section>
+</body>
+</html>
+

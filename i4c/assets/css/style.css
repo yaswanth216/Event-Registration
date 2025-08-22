@@ -1,0 +1,385 @@
+/* ========= GLOBAL RESET & BASE ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========= NAVBAR ========= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #00427E;
+  color: white;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+.nav-links li a.active {
+  color: #FFD700;
+  text-decoration: underline;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile Navbar Hidden by Default */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide on mobile until toggled */
+    flex-direction: column;
+    background: #00427E;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 15px;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex; /* Show only when toggleMenu() adds this class */
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* ========= HERO ========= */
+.hero {
+  background: url('../images/i4c.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding-top: 80px;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 90%;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ========= ABOUT ========= */
+.about-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.about-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-section h2,
+.about-section h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #004080;
+}
+
+.highlights-list,
+.workshop-list,
+.special-list {
+  list-style: disc inside;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.about-section small {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* ========= SPEAKERS ========= */
+.speakers-section {
+  padding: 60px 20px;
+  background: #f4f8fb;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #004080;
+}
+
+.speaker-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 1000px;
+  gap: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.speaker-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.speaker-img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #004080;
+}
+
+.speaker-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.speaker-details {
+  flex: 1;
+}
+
+.speaker-details h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.talk-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #004080;
+  margin-bottom: 10px;
+}
+
+.profile {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ========= SCHEDULE ========= */
+.schedule-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.schedule-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.schedule-section h2.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #004080;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.schedule-table thead {
+  background-color: #00427E;
+  color: #fff;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.schedule-table tbody tr:hover {
+  background-color: #e6f0ff;
+}
+
+/* ========= VENUE ========= */
+.venue-section {
+  padding: 60px 20px;
+  background-color: #f4f8fb;
+}
+
+.venue-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.venue-image img {
+  width: 360px;
+  border-radius: 14px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+}
+
+.venue-details {
+  flex: 1 1 300px;
+}
+
+.venue-details h3 {
+  font-size: 1.7rem;
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+/* ========= REGISTER ========= */
+.register-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.register-btn {
+  display: inline-block;
+  padding: 16px 38px;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #00427E, #0073e6);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.register-btn:hover {
+  background: linear-gradient(90deg, #0073e6, #00427E);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* ========= MOBILE FIRST MEDIA QUERIES ========= */
+
+/* Phones (up to iPhone 14 Pro) */
+@media (max-width: 430px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 0.8rem;
+    background: #00427E;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 1rem 0;
+  }
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+  .speaker-img {
+    width: 150px;
+    height: 150px;
+  }
+  .register-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 14px;
+  }
+  body {
+    font-size: 15px;
+  }
+  section {
+    padding: 60px 10px;
+  }
+  .speaker-card, .speaker-card.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .speaker-card, .speaker-card.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+  .speaker-img {
+    width: 180px;
+    height: 180px;
+  }
+  .schedule-table thead {
+    display: none;
+  }
+  .schedule-table, 
+  .schedule-table tbody, 
+  .schedule-table tr, 
+  .schedule-table td {
+    display: block;
+    width: 100%;
+  }
+  .schedule-table td {
+    position: relative;
+    padding-left: 120px;
+  }
+  .schedule-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    font-weight: 700;
+    color: #00427E;
+  }
+}
