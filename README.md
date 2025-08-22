@@ -1,37 +1,16 @@
-I4C 2025 – IEEE IES Industrial Innovation Conclave (Website)
+Event Registartion
 
-A responsive event website for I4C 2025 with registration, Razorpay checkout, and automatic confirmation email (PHPMailer).
-
+A responsive event website for event registration, Razorpay checkout, and automatic confirmation email (PHPMailer).
 
 
 ✨ Features
 
-Modern, responsive UI (mobile-first, hamburger menu).
-
-
-
 Sections: Home, About, Speakers, Schedule, Venue, Register.
-
-
-
 Registration form with client-side validation.
-
-
-
 Payment via Razorpay checkout.
-
-
-
 Post-payment email confirmation via PHPMailer (SMTP).
-
-
-
 “Add to Google Calendar” button inside the email.
-
-
-
-Basic Admin login page (placeholder).
-
+Basic Admin login page .
 
 
 i4c/
@@ -92,9 +71,7 @@ i4c/
 
 
 
-###### **Download PHPMailer(for local host running)**
-
-
+**Download PHPMailer(for local host running)**
 
 STEP 1
 
@@ -110,35 +87,35 @@ STEP 2: Enable SMTP on Gmail
 
 If you're using Gmail:
 
-1\.	Enable 2-Step Verification on your Gmail.
+1.	Enable 2-Step Verification on your Gmail.
 
-2\.	Generate App Password
+2.	Generate App Password
 
-3\.	enter ‘Mail’, then copy the 16-character app password.
+3.	enter ‘Mail’, then copy the 16-character app password.
 
-4\.	Use this app password in your code instead of your Gmail password.
+4.	Use this app password in your code instead of your Gmail password.
 
 
 
-###### **Automatic mail in case of hosting:**
+ **Automatic mail in case of hosting:**
 
 
 
 Step 1: Create a Brevo Account
 
-1\.	Go to https://www.brevo.com/
+1.	Go to https://www.brevo.com/
 
-2\.	Sign up for a free account.
+2.	Sign up for a free account.
 
-3\.	Verify your email address and complete your profile.
+3.	Verify your email address and complete your profile.
 
 Step 2: Set Up SMTP in Brevo
 
-1\.	Once logged in, go to SMTP \& API from the top-right menu (under your name).
+1.	Once logged in, go to SMTP \& API from the top-right menu (under your name).
 
-2\.	Click SMTP tab.
+2.	Click SMTP tab.
 
-3\.	You’ll find:
+3.	You’ll find:
 
 o	SMTP server: smtp-relay.brevo.com
 
@@ -154,58 +131,30 @@ Update Your PHP Code
 
 $mail->Host       = 'smtp-relay.brevo.com';
 
-&nbsp;   $mail->SMTPAuth   = true;
+   $mail->SMTPAuth   = true;
 
-&nbsp;   $mail->Username   = 'your-brevo-email@example.com'; // your Brevo email
+   $mail->Username   = 'your-brevo-email@example.com'; // your Brevo email
 
-&nbsp;   $mail->Password   = 'your-generated-smtp-password'; // SMTP password
+  $mail->Password   = 'your-generated-smtp-password'; // SMTP password
 
-&nbsp;   $mail->SMTPSecure = PHPMailer::ENCRYPTION\_STARTTLS;
+   $mail->SMTPSecure = PHPMailer::ENCRYPTION\_STARTTLS;
 
-&nbsp;   $mail->Port       = 587;
-
-###### 
-
-###### **🛠️ Database Setup**
+  $mail->Port       = 587;
 
 
+**🛠️ Database Setup**
 
 We use two databases:
-
-
-
 i4c → stores participant registration details
-
-
-
 admin → stores administrator login details
 
 **📌 Features**
----
 
 Event information pages (Home, About, Speakers)
-
-
-
 Registration form
-
-
-
 Payment integration
-
-
-
 Stores user details into MySQL
-
-
-
 Sends confirmation email with registration ID
 
-
-
-
-
 **For any further assistance, please contact: yaswanthvardhan216@gmail.com**
-
-
 
